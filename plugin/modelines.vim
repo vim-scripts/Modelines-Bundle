@@ -2,66 +2,36 @@
 "  Description: Insert modelines
 "   Maintainer:	Martin Krischik
 "      $Author: krischik $
-"        $Date: 2006-07-28 19:54:11 +0200 (Fr, 28 Jul 2006) $
-"          $Id: ada.vim 343 2006-07-28 17:54:11Z krischik $
+"        $Date: 2007-09-17 09:37:42 +0200 (Mo, 17 Sep 2007) $
+"          $Id: modelines.vim 772 2007-09-17 07:37:42Z krischik $
 "    Copyright: Copyright (C) 2006 Martin Krischik
 " Name Of File: plugin/modelines.vim
 " Last Changed: Monday, 09 May 2006
-"      Version: 1.4
-"    $Revision: $
-"     $HeadURL: $
+"      Version: 2.0
+"    $Revision: 772 $
+"     $HeadURL: https://gnuada.svn.sourceforge.net/svnroot/gnuada/trunk/tools/vim/plugin/modelines.vim $
 "        Usage: copy to plugin directory
 "      History: 18.11.2006 MK Bram's suggestion for runtime integration
 "		18.11.2006 MK "set: :" syntax for "/* */" languages   
+"		17.09.2007 MK change to bundle use NERD_Commenter when
+"		              available  
 "-------------------------------------------------------------------------------
 
-if exists("s:loaded_modlines")
+if exists("g:loaded_modlines")
     finish
 else
-    let s:loaded_modlines=1
+    let g:loaded_modlines=20
 
-    "------------------------------------------------------------------------------
-    "
-    "   Insert Modelines with standart informationss
-    "
-    function <SID>Modelines_Insert ()
-	let l:Line = line (".")
+    if exists('g:mapleader')
+        execute "nnoremap <unique>" . escape(g:mapleader . "im" , '\') .      " :call modelines#Insert ()<CR>"
+        execute "inoremap <unique>" . escape(g:mapleader . "im" , '\') . " <C-O>:call modelines#Insert ()<CR>"
 
-	call append (
-	    \ l:Line + 0,
-	    \ substitute (
-		\ &commentstring			    ,
-		\ "\%s"					    ,
-		\ " vim: set"				    .
-		\ (&wrap ? " " : " no")	. "wrap"	    .
-		\ " tabstop="		. &tabstop	    .
-		\ " shiftwidth="	. &shiftwidth	    .
-		\ " softtabstop="	. &softtabstop	    .
-		\ (&expandtab ? " " : " no") . "expandtab"  .
-		\ " :"					    ,
-		\ ""))
-	call append (
-	    \ l:Line + 1,
-	    \ substitute (
-		\ &commentstring			    ,
-		\ "\%s"					    ,
-		\ " vim: set"				    .
-		\ " textwidth="		. &textwidth	    .
-		\ " filetype="		. &filetype	    .
-		\ " foldmethod="        . &foldmethod	    .
-		\ (&spell ? " " : " no") . "spell"	    .
-		\ " :"					    ,
-		\ ""))
-    endfunction
-
-    execute "nnoremap <unique>" . escape(g:mapleader . "im" , '\') .      " :call <SID>Modelines_Insert ()<CR>"
-    execute "inoremap <unique>" . escape(g:mapleader . "im" , '\') . " <C-O>:call <SID>Modelines_Insert ()<CR>"
-
-    execute "47menu Plugin.Insert.Modelines<Tab>" . escape(g:mapleader . "im" , '\') . " :call <SID>Modelines_Insert ()<CR>"
+        execute "47menu Plugin.Insert.Modelines<Tab>" . escape(g:mapleader . "im" , '\') . " :call modelines#Insert ()<CR>"
+    endif
 endif
 
 finish
 
 "-------------------------------------------------------------------------------
 " vim: set nowrap tabstop=8 shiftwidth=4 softtabstop=4 expandtab :
-" vim: set textwidth=78 filetype=vim foldmethod=marker nospell :
+" vim: set textwidth=0 filetype=vim foldmethod=marker nospell :
