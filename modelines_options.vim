@@ -2,10 +2,12 @@
 "  Description: Options setable by the Modeline bundle
 "    Copyright: Copyright (C) 2006 … 2022 Martin Krischik
 "   Maintainer:	Martin Krischik
-"      Version: 2.0
+" Last Changed: Monday, 01 Sep 2022
+"      Version: 3.0.0
 "      History:	17.09.2007 MK change to bundle use NERD_Commenter when
 "		              available  
 "               01.09.2022 MK Change to GitHub devivery. 
+"		01.09.2022 MK Use GitHub und dein to publish new versions
 "	 Usage: copy content into your .vimrc and change options to your
 "		likeing.
 "------------------------------------------------------------------------------
