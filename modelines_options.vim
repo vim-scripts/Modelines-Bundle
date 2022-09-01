@@ -1,18 +1,15 @@
 "------------------------------------------------------------------------------
 "  Description: Options setable by the Modeline bundle
-"	   $Id: modeline_options.vim 772 2007-09-17 07:37:42Z krischik $
-"    Copyright: Copyright (C) 2006 Martin Krischik
+"    Copyright: Copyright (C) 2006 … 2022 Martin Krischik
 "   Maintainer:	Martin Krischik
-"      $Author: krischik $
-"	 $Date: 2007-09-17 09:37:42 +0200 (Mo, 17 Sep 2007) $
-"      Version: 2.0
-"    $Revision: 772 $
-"     $HeadURL: https://gnuada.svn.sourceforge.net/svnroot/gnuada/trunk/tools/vim/modeline_options.vim $
+" Last Changed: Monday, 01 Sep 2022
+"      Version: 3.0.0
 "      History:	17.09.2007 MK change to bundle use NERD_Commenter when
 "		              available  
+"               01.09.2022 MK Change to GitHub devivery. 
+"		01.09.2022 MK Use GitHub und dein to publish new versions
 "	 Usage: copy content into your .vimrc and change options to your
 "		likeing.
-"    Help Page: tail.txt
 "------------------------------------------------------------------------------
 
 echoerr 'It is suggested to copy the content of modeline_options into .vimrc!'
@@ -45,10 +42,7 @@ tar --create --bzip2		 \
 " }}}1
 
 "------------------------------------------------------------------------------
-"   Copyright (C) 2007	Martin Krischik
-"
 "   Vim is Charityware - see ":help license" or uganda.txt for licence details.
 "------------------------------------------------------------------------------
 " vim: textwidth=0 nowrap tabstop=8 shiftwidth=3 softtabstop=3 noexpandtab
 " vim: foldmethod=marker
-

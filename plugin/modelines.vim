@@ -1,20 +1,17 @@
 "-------------------------------------------------------------------------------
 "  Description: Insert modelines
 "   Maintainer:	Martin Krischik
-"      $Author: krischik $
-"        $Date: 2007-09-17 09:37:42 +0200 (Mo, 17 Sep 2007) $
-"          $Id: modelines.vim 772 2007-09-17 07:37:42Z krischik $
-"    Copyright: Copyright (C) 2006 Martin Krischik
+"    Copyright: Copyright (C) 2006 … 2022 Martin Krischik
 " Name Of File: plugin/modelines.vim
-" Last Changed: Monday, 09 May 2006
-"      Version: 2.0
-"    $Revision: 772 $
-"     $HeadURL: https://gnuada.svn.sourceforge.net/svnroot/gnuada/trunk/tools/vim/plugin/modelines.vim $
+" Last Changed: Monday, 01 Sep 2022
+"      Version: 3.0.0
 "        Usage: copy to plugin directory
 "      History: 18.11.2006 MK Bram's suggestion for runtime integration
 "		18.11.2006 MK "set: :" syntax for "/* */" languages   
 "		17.09.2007 MK change to bundle use NERD_Commenter when
 "		              available  
+"	        01.09.2022 MK Change to GitHub devivery. 
+"		01.09.2022 MK Use GitHub und dein to publish new versions
 "-------------------------------------------------------------------------------
 
 if exists("g:loaded_modlines")
