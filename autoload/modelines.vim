@@ -5,13 +5,15 @@
 " Name Of File: plugin/modelines.vim
 " Last Changed: Monday, 01 Sep 2022
 "      Version: 3.0.0
-"	 Usage: copy to plugin directory
+"        Usage: install with dein
 "      History: 18.11.2006 MK Bram's suggestion for runtime integration
 "		18.11.2006 MK "set: :" syntax for "/* */" languages   
 "		17.09.2007 MK change to bundle use NERD_Commenter when
-"		              available  
-"	        01.09.2022 MK Change to GitHub devivery. 
+"			      available  
+"		01.09.2022 MK Change to GitHub delivery. 
 "		01.09.2022 MK Use GitHub und dein to publish new versions
+"		25.09.2022 MK Add spell language and file encoding
+"		25.09.2022 MK update nerdcommenter 
 "-------------------------------------------------------------------------------
 
 if version < 700
@@ -24,35 +26,41 @@ setlocal cpoptions-=C
 if exists("loaded_nerd_comments")
     "------------------------------------------------------------------------------
     "
-    "	Insert Modelines with standart informationss
+    "	Insert Modelines with standard informations
     "
     function modelines#Insert ()
 	let l:Line = line (".")
 
 	call append (
 	    \ l:Line + 0,
-	    \ "vim: set"				.
-	    \ (&wrap ? " " : " no")	 . "wrap"	.
-	    \ " tabstop="		 . &tabstop	.
-	    \ " shiftwidth="		 . &shiftwidth	.
-	    \ " softtabstop="		 . &softtabstop	.
-	    \ (&expandtab ? " " : " no") . "expandtab"	.
+	    \ "vim: set"				    .
+	    \ " textwidth="		    . &textwidth    .
+	    \ (&wrap ? " " : " no")	    . "wrap"	    .
+	    \ " tabstop="		    . &tabstop	    .
+	    \ " shiftwidth="		    . &shiftwidth   .
+	    \ " softtabstop="		    . &softtabstop  .
+	    \ (&expandtab ? " " : " no")    . "expandtab"   .
 	    \ " :")
-	execute l:Line + 1 . " call NERDComment(0, 'norm')"
 	call append (
 	    \ l:Line + 1,
-	    \ "vim: set"				.
-	    \ " textwidth="		. &textwidth	.
-	    \ " filetype="		. &filetype	.
-	    \ " foldmethod="		. &foldmethod	.
-	    \ (&spell ? " " : " no")	. "spell"	.
+	    \ "vim: set"				    .
+	    \ " filetype="		    . &filetype	    .
+	    \ " fileencoding="		    . &fileencoding .
+	    \ " fileformat="		    . &fileformat   .
+	    \ " foldmethod="		    . &foldmethod   .
 	    \ " :")
-	execute l:Line + 2 . " call NERDComment(0, 'norm')"
+	call append (
+	    \ l:Line + 2,
+	    \ "vim: set"				    .
+	    \ (&spell ? " " : " no")	    . "spell"	    .
+	    \ " spelllang="		    . &spelllang    .
+	    \ " :")
+	execute (l:Line + 1) . "," . (l:Line + 3) . " call nerdcommenter#Comment('n', 'comment')"
     endfunction
 else
     "------------------------------------------------------------------------------
     "
-    "	Insert Modelines with standart informationss
+    "	Insert Modelines with standard informations
     "
     function modelines#Insert ()
 	let l:Line = line (".")
@@ -87,6 +95,9 @@ endif
 
 finish
 
+"------------------------------------------------------------------------------
+"   Vim is Charityware - see ":help license" or uganda.txt for licence details.
 "-------------------------------------------------------------------------------
-" vim: set nowrap tabstop=8 shiftwidth=4 softtabstop=4 noexpandtab :
-" vim: set textwidth=0 filetype=vim foldmethod=marker nospell :
+" vim: set textwidth=78 nowrap tabstop=8 shiftwidth=4 softtabstop=4 expandtab :
+" vim: set filetype=vim fileencoding=utf-8 fileformat=unix foldmethod=marker :
+" vim: set spell spelllang=en_gb :
