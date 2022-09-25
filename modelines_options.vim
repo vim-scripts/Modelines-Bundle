@@ -3,7 +3,7 @@
 "    Copyright: Copyright (C) 2006 … 2022 Martin Krischik
 "   Maintainer:	Martin Krischik
 " Last Changed: Monday, 01 Sep 2022
-"      Version: 3.0.0
+"      Version: 3.1
 "        Usage: install with dein
 "      History:	17.09.2007 MK change to bundle use NERD_Commenter when
 "		              available  

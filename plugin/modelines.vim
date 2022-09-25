@@ -4,7 +4,7 @@
 "    Copyright: Copyright (C) 2006 … 2022 Martin Krischik
 " Name Of File: plugin/modelines.vim
 " Last Changed: Monday, 01 Sep 2022
-"      Version: 3.0.0
+"      Version: 3.1
 "        Usage: install with dein
 "      History: 18.11.2006 MK Bram's suggestion for runtime integration
 "		18.11.2006 MK "set: :" syntax for "/* */" languages   
