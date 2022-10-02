@@ -1,0 +1,50 @@
+= Modelines Bundle =
+
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1352
+
+== Description ==
+
+Inserts three modelines with the currently active filetype, tabulator and spelling settings.
+
+Can be used for:
+
+- a quick overview of the file settings (like is the file dos or unix format).
+- to set the file setting (just change the settings which are wrong).
+- to make sure the file settings stay put when the file is saved and loaded.
+
+Can be easily extended for more settings - just as you want it.
+
+== Installation ==
+
+Install from https://github.com/krischik/vim-modelines using dein (https://github.com/Shougo/dein.vim) or similar:
+
+{{code|lang=vim|
+call dein#begin('$HOME/vimfiles/bundles')
+call dein#add('krischik/vim-modelines')
+call dein#end()
+call dein#install()
+}}
+
+== References ==
+
+{|
+|+ Modelines Bundle
+|-
+| Vim-Script	|| https://www.vim.org/scripts/script.php?script_id=1352
+|-
+| Source	|| https://github.com/krischik/vim-modelines
+|-
+| Wiki		|| https://github.com/krischik/vim-modelines/wiki
+|-
+| Releases	|| https://github.com/krischik/vim-modelines/releases
+|-
+| Issues	|| https://github.com/krischik/vim-modelines/issues
+|-
+| Discussions	|| https://github.com/krischik/vim-modelines/discussions
+|}
+
+==Comments==
+
+/* vim: set textwidth=0 wrap tabstop=8 shiftwidth=4 softtabstop=4 noexpandtab : */
+/* vim: set filetype=mediawiki fileencoding=utf8 fileformat=unix foldmethod=marker : */
+/* vim: set nospell spelllang=en_gb : */
