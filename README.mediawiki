@@ -18,12 +18,10 @@ Can be easily extended for more settings - just as you want it.
 
 Install from https://github.com/krischik/vim-modelines using dein (https://github.com/Shougo/dein.vim) or similar:
 
-{{code|lang=vim|
-call dein#begin('$HOME/vimfiles/bundles')
-call dein#add('krischik/vim-modelines')
-call dein#end()
-call dein#install()
-}}
+    call dein#begin('$HOME/vimfiles/bundles')
+    call dein#add('krischik/vim-modelines')
+    call dein#end()
+    call dein#install()
 
 == References ==
 
